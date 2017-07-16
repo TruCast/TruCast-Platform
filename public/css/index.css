@@ -1,0 +1,19 @@
+body {
+  /* height: 1080px; */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.videos video {
+  width: 600px;
+  padding-bottom: 2px;
+}
+
+#nick_input {
+  margin-right: 2px;
+}

@@ -1,0 +1,58 @@
+{
+  "name": "TruCast-Platform",
+  "version": "0.0.1",
+  "description": "Web-based tool suite for Live Stream Broadcasters",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trucast/trucast-platform.git"
+  },
+  "scripts": {
+    "build": "npm run build-server && npm run build-client",
+    "build-client": "babel --no-babelrc src/public --presets=babel-preset-modern-browsers --out-dir ./public/js",
+    "build-server": "babel src --ignore public --out-dir ./dist",
+    "dev": "NODE_ENV=development nodemon --watch ./src --watch ./views --ignore 'views/*.marko.js' --exec 'npm run build-client && babel-node' src/index.js",
+    "postinstall": "npm run build",
+    "start": "node dist/index.js",
+    "test": "eslint ./src"
+  },
+  "author": "TruCast",
+  "license": "MIT",
+  "engines": {
+    "node": "6.11.1",
+    "npm": "4.5.0"
+  },
+  "dependencies": {
+    "babel-cli": "6.10.*",
+    "babel-core": "6.10.*",
+    "babel-preset-es2015-node6": "0.4.*",
+    "babel-preset-modern-browsers": "^7.0.0",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "glob": "^7.1.1",
+    "helmet": "^3.2.0",
+    "marko": "^3.13.2",
+    "morgan": "^1.7.0",
+    "ramda": "^0.22.1",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "eslint": "2.13.*",
+    "eslint-config-busbud": "^0.2.2",
+    "mocha": "2.5.*",
+    "nodemon": "^1.11.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node6"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "busbud",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jquery": true
+    }
+  }
+}

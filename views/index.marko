@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StreamWithFriends - Join</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+  </head>
+  <body>
+    <div class="main">
+      <h2>StreamWithFriends</h2>
+      <div id="videos" class="videos"></div>
+
+      <p>Enter your desired username and hit connect</p>
+      <p>Status: <span id="status">Disconnnected</span></p>
+      <form>
+        <div class="ui input">
+          <input id="nick_input" type="text" value="">
+          <button id="connect_btn" class="ui button" type="submit">
+            Connect
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://simplewebrtc.com/latest-v2.js"></script>
+    <script>window.channel_id = '${data.channel_id}';</script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

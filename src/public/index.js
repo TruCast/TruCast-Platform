@@ -30,3 +30,15 @@ $('#connect_btn').click(e => {
   if (ready_for_call) return joinRoom();
   webrtc.on('readyToCall', () => joinRoom());
 });
+
+function leaveRoom() {
+  $('#status').text('Disconnecting...');
+  webrtc.leaveRoom(window.channel_id);
+  webrtc.on('videoRemoved', function() {
+    $('#status').text('Disconnected');
+  });
+}
+
+$('#disconnect_btn').click(e => {
+  webrtc.leaveRoom(window.channel_id);
+});

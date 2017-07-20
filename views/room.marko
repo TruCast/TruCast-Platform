@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TruCast</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/components/container.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/components/segment.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+  </head>
+  <body>
+    <div class="ui inverted vertical masthead center aligned segment">
+      <div class="ui text container">
+        <div class="main">
+          <h2>TruCast OBS Browser Source</h2>
+          <div id="videos" class="videos"></div>
+
+          <p>Enter your Twitter username and hit connect</p>
+          <p>Status: <span id="status">Disconnnected</span></p>
+          <p id="subTitle"></p>
+          <form>
+            <div class="ui input">
+              <input id="nick_input" type="text" value="">
+              <button id="connect_btn" class="ui blue button" type="submit">
+                Connect
+              </button>
+              <button id="disconnect_btn" class="ui red button" type="submit">
+                Disconnnect
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://simplewebrtc.com/latest-v2.js"></script>
+    <script>window.channel_id = '${data.channel_id}';</script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

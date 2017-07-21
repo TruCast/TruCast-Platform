@@ -1,5 +1,5 @@
 let ready_for_call = false;
-//const room = location.search && location.search.split('?')[1];
+// const room = location.search && location.search.split('?')[1];
 const webrtc = new SimpleWebRTC({ // eslint-disable-line
   localVideoEl: 'videos',
   remoteVideosEl: '',
@@ -58,16 +58,4 @@ $('#connect_btn').click(e => {
   e.preventDefault();
   if (ready_for_call) return joinRoom();
   webrtc.on('readyToCall', () => joinRoom());
-});
-
-function disconnect() {
-  $('#status').text('Disconnecting...');
-  webrtc.disconnect(peer);
-  webrtc.on('videoRemoved', function() {
-    $('#status').text('Disconnected');
-  });
-}
-
-$('#disconnect_btn').click(e => {
-  webrtc.disconnect(peer);
 });

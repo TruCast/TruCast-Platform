@@ -23,8 +23,8 @@ app.use(helmet());
 app.use(express.static('public'));
 
 app.get('/stream', (req, res) => res.marko(views.stream, {channel_id}));
-app.get('/room', (req, res) => res.marko(views.room, {channel_id}));
-app.get('/', (req, res) => res.marko(views.home));
+app.get('/', (req, res) => res.marko(views.index, {channel_id}));
+// app.get('/home', (req, res) => res.marko(views.home));
 
 console.log(`Listening on port: ${port}`);
 app.listen(port);

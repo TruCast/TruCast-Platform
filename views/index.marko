@@ -14,9 +14,19 @@
           <h2>TruCast OBS Browser Source</h2>
           <div id="videos" class="videos"></div>
 
-          <p>Enter a username and hit connect</p>
+          <p>First, enter a Room Name and click Create Room to reveal your room links. Then Enter a username and hit connect.</p>
           <p>Status: <span id="status">Disconnnected</span></p>
-          <p id="subTitle"></p>
+          <p id="roomLink"></p>
+          <p id="obsLink"></p>
+          <form id="createRoom">
+            <div class="ui input">
+              <input id="sessionInput" type="text" value="">
+              <button id="createRoom_btn" class="ui green button" type="submit">
+                Create Room
+              </button>
+            </div>
+          </form>
+          <br/>
           <form>
             <div class="ui input">
               <input id="nick_input" type="text" value="">

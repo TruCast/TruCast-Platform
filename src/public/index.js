@@ -18,7 +18,7 @@ function setRoom(name) {
   $('#createRoom').remove();
   $('h1').text(name);
   $('#roomLink').text('Link for others to join: ' + location.href);
-  $('#obsLink').text('Link for OBS Browser Source: ' + location.href + '/stream');
+  $('#obsLink').text('Link for OBS Browser Source: https://trucast-platform.herokuapp.com/stream');
   $('body').addClass('active');
 }
 

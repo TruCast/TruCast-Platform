@@ -4,4 +4,3 @@ public/js/
 
 *.log
 *.marko.js
-*.travis.yml

@@ -17,8 +17,8 @@ const webrtc = new SimpleWebRTC({ // eslint-disable-line
 function setRoom(name) {
   $('#createRoom').remove();
   $('h1').text(name);
-  $('#roomLink').text('Link for others to join: ' + location.href);
-  $('#obsLink').text('Link for OBS Browser Source: https://trucast-platform.herokuapp.com/stream');
+  $('#roomLink').text('LINK FOR OTHERS TO JOIN: ' + location.href);
+  $('#obsLink').text('LINK FOR OBS BROWSER SOURCE: https://trucast-platform.herokuapp.com/stream');
   $('body').addClass('active');
 }
 

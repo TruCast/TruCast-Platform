@@ -8,7 +8,7 @@ const webrtc = new SimpleWebRTC({ // eslint-disable-line
       width: 1280,
       height: 720
     },
-    audio: true
+    audio: false
   },
   autoRequestMedia: true,
   autoRemoveVideos: true

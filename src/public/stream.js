@@ -1,5 +1,5 @@
 const webrtc = new SimpleWebRTC({ // eslint-disable-line
-  url: 'http://trucast-signal-server.herokuapp.com:80',
+  // url: 'http://trucast-signal-server.herokuapp.com:80',
   localVideoEl: '',
   remoteVideosEl: '',
   media: {

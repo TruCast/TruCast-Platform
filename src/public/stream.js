@@ -1,5 +1,5 @@
 const webrtc = new SimpleWebRTC({ // eslint-disable-line
-  url: 'http://localhost:8888',
+  // url: 'http://localhost:8888',
   localVideoEl: '',
   remoteVideosEl: '',
   media: {

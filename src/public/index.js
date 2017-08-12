@@ -3,7 +3,7 @@ const room = location.search && location.search.split('?')[1];
 const webrtc = new SimpleWebRTC({ // eslint-disable-line
   // url: 'https://localhost:8888',
   localVideoEl: 'videos',
-  remoteVideosEl: '',
+  remoteVideosEl: 'videos',
   media: {
     video: {
       width: 1280,
@@ -11,15 +11,15 @@ const webrtc = new SimpleWebRTC({ // eslint-disable-line
     },
     audio: false
   },
-  autoRequestMedia: true,
-  autoRemoveVideos: true
+  autoRequestMedia: false
+  // autoRemoveVideos: true
 });
 
 function setRoom(name) {
   $('#createRoom').remove();
-  $('h1').text(name);
-  $('#roomLink').text('LINK FOR OTHERS TO JOIN: ' + location.href);
-  $('#obsLink').text('LINK FOR OBS BROWSER SOURCE: https://trucast-platform.herokuapp.com/stream');
+  $('#roomLink').text('Link For Others To Join: ' + location.href);
+  $('#obsLink').text('Link For OBS Browser Source: https://trucast-platform.herokuapp.com/stream');
+  $('#obsSpecs').text('OBS Browser Source Specs: Width=1280 Height=720 FPS=30 or 60 CSS=as is');
   $('body').addClass('active');
 }
 
@@ -58,6 +58,7 @@ function joinRoom() {
 
 $('#connect_btn').click(e => {
   e.preventDefault();
+  webrtc.startLocalVideo();
   if (ready_for_call) return joinRoom();
   webrtc.on('readyToCall', () => joinRoom());
 });

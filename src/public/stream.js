@@ -10,6 +10,7 @@ const webrtc = new SimpleWebRTC({ // eslint-disable-line
 
 webrtc.on('videoAdded', (video, peer) => {
   const html = `<div id="vid_${peer.nick}" class="video animated slideInLeft"><img src="/img/border.png" /><span>${peer.nick}</span></div>`;
+  const html2 = `<div id="vid_${peer.nick}" class="video animated slideInRight"><img src="/img/border.png" /><span>${peer.nick}</span></div>`;
   let users = $('.video > span').map((idx, el) => {
     return $(el).text();
   }).get();
@@ -20,10 +21,17 @@ webrtc.on('videoAdded', (video, peer) => {
 
   if (user_idx === 0) {
     $('#videos').prepend(html);
-  } else if (user_idx === (users.length - 1)) {
-    $('#videos').append(html);
+  }
+  if (user_idx === 1) {
+    $('#videos2').append(html2);
+  } 
+  if (user_idx === 2) {
+    $('#videos').prepend(html);
+  }
+  if (user_idx === 3) {
+    $('#videos2').append(html2);
   } else {
-    $(html).prependTo($('.video').eq(user_idx + 1));
+    $(html2).prependTo($('.video').eq(user_idx + 1));
   }
 
   $(`#vid_${peer.nick}`).prepend(video);
@@ -32,6 +40,7 @@ webrtc.on('videoAdded', (video, peer) => {
 webrtc.on('videoRemoved', (video, peer) => {
   const el = $(`#vid_${peer.nick}`);
   el.addClass('slideOutLeft');
+  el.addClass('slideOutRight');
   el.on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', () => {
     el.remove();
   });

@@ -8,17 +8,14 @@
     <link rel="stylesheet" type="text/css" href="/css/index.css">
   </head>
   <body>
-    <div class="ui inverted vertical masthead center aligned segment">
-      <div class="ui text container">
-        <div class="main">
-          <h2>TruCast OBS Browser Source</h2>
-          <div id="videos" class="videos"></div>
-
-          <p>First, enter a Room Name and click Create Room to reveal your room links. Then Enter a username and hit connect.
-          Specs for OBS Browser Source: Width=1280 Height=720 FPS=30 or 60 CSS=as is</p>
-          <p>Status: <span id="status">Disconnnected</span></p>
+      <div class="header">
+        <h1>TruCast OBS Browser Source</h1>
+      </div>
+      <div class="main">
+        <p>First, enter a Room Name and click Create Room to reveal your room links. Then Enter a username and hit connect.</p>
           <p id="roomLink"></p>
           <p id="obsLink"></p>
+          <p id="obsSpecs"></p>
           <form id="createRoom">
             <div class="ui input">
               <input id="sessionInput" type="text" value="">
@@ -36,10 +33,11 @@
               </button>
             </div>
           </form>
-        </div>
+          <p>Status: <span id="status">Disconnnected</span></p>
       </div>
-    </div>
-
+      <div class="container">
+        <div id="videos" class="videos"></div>
+      </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://simplewebrtc.com/latest-v2.js"></script>
     <script>window.channel_id = '${data.channel_id}';</script>

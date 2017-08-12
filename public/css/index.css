@@ -3,18 +3,78 @@ body {
   /* height: 1080px; */
 }
 
+.header {
+  text-align: center;
+  color: white;
+}
+
 .main {
+  width: 100%;
+  text-align: center;
+  color: silver;
+  font-size: 16px;
+}
+
+.container {
+  margin: auto;
+  height: 409px;
+  width: 720px;
+}
+
+.vidContainer {
+  position: relative;
+  margin: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 409px;
+  width: 720px;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.videos video {
-  width: 600px;
-  padding-bottom: 2px;
+.flex-item {
+  height: 204.5px;
+  width: 360px;
+  border: 1px solid grey;
 }
 
-#nick_input {
-  margin-right: 2px;
+.videos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+ }
+
+ .videos video {
+   width: 360px;
+ }
+
+.video {
+  position: relative;
+}
+
+.video video {
+  width: 360px;
+}
+
+.video img {
+  width: 360px;
+}
+
+.video img {
+  position: absolute;
+  left: 0;
+  z-index: 1
+}
+
+.video span {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 9px;
+  position: absolute;
+  bottom: 7px;
+  left: 20px;
+  z-index: 2;
 }

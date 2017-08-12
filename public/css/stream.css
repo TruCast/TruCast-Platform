@@ -3,11 +3,29 @@ body {
 }
 
 /* TODO: See if this is needed or not */
-.main {
-  margin: auto;
+main {
+  display: flex;
+}
+
+.container {
+  position: relative;
+  height: 1100px;
+  width: 300px;
 }
 
 .videos {
+  display: flex;
+  align-items: center;
+  height: 1080px;
+  width: 250px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+ .videos2 {
+  position: absolute;
+  right: 0px;
   display: flex;
   align-items: center;
   height: 1080px;

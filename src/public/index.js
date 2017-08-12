@@ -1,7 +1,7 @@
 let ready_for_call = false;
 const room = location.search && location.search.split('?')[1];
 const webrtc = new SimpleWebRTC({ // eslint-disable-line
-  // url: 'https://localhost:8888',
+  url: 'https://trucast-signalserver.herokuapp.com',
   localVideoEl: 'videos',
   remoteVideosEl: 'videos',
   media: {
